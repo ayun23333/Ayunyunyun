@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax请求</title>
+    <script src="js/util.js"></script>
+    <script>
+        window.onload = function(){
+            // 为按钮绑定事件处理函数
+            document.getElementById("ajax-btn").onclick = function(){
+                $.ajax2({
+                    method:"GET",
+                    url:"data/table.html",
+                    success:function(data){
+                        document.getElementById("result").innerHTML = data;
+                    }
+                });
+            };
+        };
+    </script>
+</head>
+<body>
+<button id="ajax-btn">请求table.html</button>
+<div id="result"></div>
+</body>
+</html>
